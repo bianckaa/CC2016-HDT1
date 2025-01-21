@@ -31,4 +31,5 @@ public class OsterBlender implements IBlender{
     public int GetSpeed(){
         return velocidad;
     }
+    
 }
