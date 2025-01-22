@@ -1,3 +1,16 @@
+/**
+ * Universidad del Valle de Guatemala
+ * Algoritmos y Estructuras de Datos - Seccion 31
+ * Hoja de Trabajo No.1
+ * Integrantes:
+ * Biancka Raxón 24960
+ * Diana Sosa 241040
+ * Ivana Figueroa 24785
+ * 
+ * 
+ * Clase: Main
+ * Clase principal del programa
+ */
 import java.util.Scanner;
 
 public class Main {
@@ -9,6 +22,7 @@ public class Main {
     System.out.println("3. Llenar licuadora");
     System.out.println("4. Vaciar licuadora");
     System.out.println("5. ¿Licuadora llena si/no?");
+<<<<<<< HEAD
     System.out.println("salir");
 
 
@@ -52,4 +66,9 @@ public class Main {
     static void licuadora_llena(){
 
     }
+=======
+    System.out.println("Por favor escoja una opcion");
+    
+    
+>>>>>>> 57c28121f161762312175c25fee80bf747465ffc
 }
