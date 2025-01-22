@@ -13,8 +13,6 @@
  */
 public class OsterBlender implements IBlender{
 
-
-
     private int velocidad;
     private boolean lleno;
 
@@ -31,32 +29,44 @@ public class OsterBlender implements IBlender{
 
     public boolean getLleno() { return this.lleno; }
 
-
+    /**
+     * Aumentar velocidad de licuadora.
+     */
     @Override
     public void SpeedUp(){
         velocidad++;
     }
-
+    /**
+     * Verificar estado de la licuadora lleno/vacio.
+     */
     @Override
     public boolean IsFull(){
         return lleno;
     }
-
+    /**
+     * Accion de llenar la licuadora
+     */
     @Override
     public void Fill(){
         lleno = true;
     }
-
+    /**
+     * Accion de vaciar la licuadora
+     */
     @Override
     public void Empty(){
         lleno=false;
     }
-
+    /**
+     * Aumentar velocidad de licuadora.
+     */
     @Override
     public void SpeedDown (){
         velocidad--;
     }
-
+    /**
+     * Accion de verificar velocidad de la licuadora
+     */
     @Override
     public int GetSpeed(){
         return velocidad;
