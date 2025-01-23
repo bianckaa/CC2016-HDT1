@@ -14,61 +14,72 @@
 import java.util.Scanner;
 
 public class Main {
-    Scanner scanner = new Scanner(System.in);
 
+    static Scanner scanner = new Scanner(System.in);
+
+    public static void main (String[] args){
+        OsterBlender licuadora = new OsterBlender(0, false);
+        boolean salir = false;
+
+    while (!salir) {
     System.out.println("--OPCIONES DE LA LICUADORA--");
     System.out.println("1. Subir velocidad");
     System.out.println("2. Bajar velocidad");
     System.out.println("3. Llenar licuadora");
     System.out.println("4. Vaciar licuadora");
     System.out.println("5. ¿Licuadora llena si/no?");
-<<<<<<< HEAD
-    System.out.println("salir");
-
-
+    System.out.println("6. velocidad actual");
+    System.out.println("7. Salir");
     System.out.println("Por favor escoja una opcion");
+
     int opcion = scanner.nextInt();
 
     switch(opcion){
         case 1: 
-            subir_velocidad();
+            licuadora.SpeedUp();
+               System.out.println("La velocidad se aumento su velocidad actual es: " + licuadora.GetSpeed());
             break;
         case 2:
-            bajar_velocidad();
-            break;
+            if (licuadora.GetSpeed() > 0) {
+                        licuadora.SpeedDown();
+                        System.out.println("La velocidad disminuyo su velocidad actual es: " + licuadora.GetSpeed());
+                    } else {
+                        System.out.println("La velocidad ya está en 0.");
+                    }
+                    break;
         case 3:
-            llenar_licuadora();
-            break;
+            if (!licuadora.IsFull()) {
+                        licuadora.Fill();
+                        System.out.println("Licuadora llena.");
+                    } else {
+                        System.out.println("La licuadora ya está llena.");
+                    }
+                    break;
         case 4:
-            vaciar_licuadora();
-            break;
+            if (licuadora.IsFull()) {
+                        licuadora.Empty();
+                        System.out.println("Licuadora vacia.");
+                    } else {
+                        System.out.println("La licuadora ya está vacía.");
+                    }
+                    break;
         case 5:
-            licuadora_llena();
-            break;
+            if (licuadora.IsFull()) {
+                        System.out.println("La licuadora está llena.");
+                    } else {
+                        System.out.println("La licuadora está vacía.");
+                    }
+                    break;
+            
         case 6:
-            salir();
+            System.out.println("la velocidad actual de su licuadora es: " + licuadora.GetSpeed());
             break;
-    }
-    static void subir_velocidad(){
-        System.out.println("Digite la velocidad");
-        int numero = scanner.nextInt();
 
-    }
-    static void bajar_velocidad(){
-
-    }
-    static void llenar_licuadora(){
-
-    }
-    static void vaciar_licuadora(){
-
-    }
-    static void licuadora_llena(){
-
-    }
-=======
-    System.out.println("Por favor escoja una opcion");
-    
-    
->>>>>>> 57c28121f161762312175c25fee80bf747465ffc
+        case 7:
+            System.out.println("Saliendo del programa :)");
+            salir = true; 
+            break;
+     }
+   }
+ }
 }
