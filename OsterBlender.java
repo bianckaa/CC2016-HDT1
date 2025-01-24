@@ -17,8 +17,8 @@ public class OsterBlender implements IBlender{
     private boolean lleno;
 
     public OsterBlender(int velocidad, boolean lleno) {
-        this.velocidad = 0;
-        this.lleno = false;
+        this.velocidad = velocidad;
+        this.lleno = lleno;
     }
 
     public void setVelocidad(int velocidad) { this.velocidad = velocidad;}
