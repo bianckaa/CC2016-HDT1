@@ -9,28 +9,33 @@
  * 
  * 
  * Clase: OsterBlender
- * Clase que implementa la interfaz IBlender y representa una licuadora de marca Oster.
+ * Clase que implementa la interfaz IBlender.
+ * Establecer las caracteristicas de una licuadora y las acciones que puede realizar mediante la interfaz IBlender.
  */
 public class OsterBlender implements IBlender{
-
+    // La velocidad actual de la licuadora.
     private int velocidad;
+    // Indica si la licuadora está llena o vacía.
     private boolean lleno;
 
+
     /**
-     * Constructor para inicializar la licuadora con una determinada velocidad y estado de llenado.
-     * 
-     * @param velocidad  velocidad que tiene la licuadora al encenderse.
-     * @param lleno estado inical de llenado en el que se encuentra la licuadora al encenderse (true si está llena, false si está vacía).
+     * Constructor para crear una licuadora con velocidad inicial y estado lleno/vacío.
+     *
+     * @param velocidad La velocidad con la que empieza la licuadora.
+     * @param lleno True si la licuadora está llena, false si está vacía.
      */
     public OsterBlender(int velocidad, boolean lleno) {
-        this.velocidad = 0;
-        this.lleno = false;
+        this.velocidad = velocidad;
+        this.lleno = lleno;
     }
 
     /**
-     * Establece la velocidad de la licuadora.
-     * 
+     * Métodos para cambiar y obtener la velocidad y el estado de la licuadora.
+     * - Los setters permiten cambiar la velocidad o el estado lleno/vacío.
+     * - Los getters devuelven el valor actual de la velocidad o si está llena.
      */
+
     public void setVelocidad(int velocidad) { this.velocidad = velocidad;}
     
 
@@ -59,13 +64,19 @@ public class OsterBlender implements IBlender{
     public void SpeedUp(){
         velocidad++;
     }
+
+
     /**
      * Verificar estado de la licuadora lleno/vacio.
+     * 
+     * @return true si la licuadora esta llena, false si esta vacia.
      */
     @Override
     public boolean IsFull(){
         return lleno;
     }
+
+    
     /**
      * Accion de llenar la licuadora
      */
@@ -73,6 +84,8 @@ public class OsterBlender implements IBlender{
     public void Fill(){
         lleno = true;
     }
+
+
     /**
      * Accion de vaciar la licuadora
      */
@@ -80,6 +93,8 @@ public class OsterBlender implements IBlender{
     public void Empty(){
         lleno=false;
     }
+
+
     /**
      * Aumentar velocidad de licuadora.
      */
@@ -87,8 +102,12 @@ public class OsterBlender implements IBlender{
     public void SpeedDown (){
         velocidad--;
     }
+
+
     /**
      * Accion de verificar velocidad de la licuadora
+     * 
+     * @return la velocidad de la licuadora en numero entero
      */
     @Override
     public int GetSpeed(){
