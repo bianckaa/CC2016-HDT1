@@ -42,10 +42,9 @@ public class Main {
             System.out.println("║  7. Salir                             ║");
             System.out.println("╚═══════════════════════════════════════╝");
             System.out.print("Seleccione una opción (^-^)/: ");
-            System.out.println();
-
             int opcion = scanner.nextInt();
-
+            System.out.println();
+            
             switch(opcion){
                 case 1: 
                     licuadora.SpeedUp();
