@@ -18,6 +18,13 @@ public class Main {
 
     static Scanner scanner = new Scanner(System.in);
 
+    /**
+     * Método principal que inicia el programa y maneja el menú de opciones.
+     * Permite al usuario interactuar con la licuadora mediante las opciones disponibles en el menú.
+     * El programa continuará ejecutándose hasta que el usuario seleccione la opción para salir.
+     *
+     * @param args Argumentos de línea de comandos (no utilizados en este caso).
+     */
     public static void main (String[] args){
 
         // Crear la instancia de OsterBlender con velocidad inicial 0 y vací

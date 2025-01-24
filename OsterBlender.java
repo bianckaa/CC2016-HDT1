@@ -38,10 +38,23 @@ public class OsterBlender implements IBlender{
 
     public void setVelocidad(int velocidad) { this.velocidad = velocidad;}
     
+
+    /**
+     * Establece el estado de llenado en el que se encuentra la licuadora.
+     * 
+     */
     public void setLleno(boolean lleno) { this.lleno = lleno;}
 
+    /**
+     * Obtiene la velocidad actual de la licuadora.
+     * 
+     */
     public int getVelocidad() { return this.velocidad; }
 
+    /**
+     * Obtiene el estado de llenado de la licuadora.
+     * 
+     */
     public boolean getLleno() { return this.lleno; }
 
     /**
