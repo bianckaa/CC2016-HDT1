@@ -10,6 +10,7 @@
  * 
  * Clase: Main
  * Clase principal del programa
+ * Controlar la logica de funcionamiento del menu para que se pueda interactuar con el usuario
  */
 import java.util.Scanner;
 
@@ -18,9 +19,15 @@ public class Main {
     static Scanner scanner = new Scanner(System.in);
 
     public static void main (String[] args){
+
+        // Crear la instancia de OsterBlender con velocidad inicial 0 y vací
         OsterBlender licuadora = new OsterBlender(0, false);
+        // Variable para controlar la salida del programa.
         boolean salir = false;
 
+
+
+    // Ciclo para mostrar el menú hasta que el usuario decida salir con las opciones indicadas.
     while (!salir) {
     System.out.println("--OPCIONES DE LA LICUADORA--");
     System.out.println("1. Subir velocidad");
@@ -32,14 +39,16 @@ public class Main {
     System.out.println("7. Salir");
     System.out.println("Por favor escoja una opcion");
 
+    
+     // Leer la opción seleccionada por el usuario.
     int opcion = scanner.nextInt();
 
     switch(opcion){
-        case 1: 
+        case 1: //subir su velocidad
             licuadora.SpeedUp();
                System.out.println("La velocidad se aumento su velocidad actual es: " + licuadora.GetSpeed());
             break;
-        case 2:
+        case 2://bajar su velocidad
             if (licuadora.GetSpeed() > 0) {
                         licuadora.SpeedDown();
                         System.out.println("La velocidad disminuyo su velocidad actual es: " + licuadora.GetSpeed());
@@ -47,7 +56,7 @@ public class Main {
                         System.out.println("La velocidad ya está en 0.");
                     }
                     break;
-        case 3:
+        case 3://accion de llenar la licuadora
             if (!licuadora.IsFull()) {
                         licuadora.Fill();
                         System.out.println("Licuadora llena.");
@@ -55,7 +64,7 @@ public class Main {
                         System.out.println("La licuadora ya está llena.");
                     }
                     break;
-        case 4:
+        case 4://accion de vaciar la licuadora
             if (licuadora.IsFull()) {
                         licuadora.Empty();
                         System.out.println("Licuadora vacia.");
@@ -63,7 +72,7 @@ public class Main {
                         System.out.println("La licuadora ya está vacía.");
                     }
                     break;
-        case 5:
+        case 5://devolver si la licuadora esta llena o no
             if (licuadora.IsFull()) {
                         System.out.println("La licuadora está llena.");
                     } else {
@@ -71,15 +80,23 @@ public class Main {
                     }
                     break;
             
-        case 6:
+        case 6://devolver el valor de la velocidad actual de la licuadora
             System.out.println("la velocidad actual de su licuadora es: " + licuadora.GetSpeed());
             break;
 
-        case 7:
+        case 7://finalizar con el programa
             System.out.println("Saliendo del programa :)");
             salir = true; 
             break;
+
+        default://respuesta ante una opcion no valida
+        System.out.println("Opción no válida.");
+        break;
+        
      }
    }
+   //cierre de scanner al antes de finalizar el programa
+   scanner.close();
+   System.out.println("Programa finalizado.");
  }
 }

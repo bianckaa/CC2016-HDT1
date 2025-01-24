@@ -11,7 +11,7 @@
  * Clase: OsterBlenderTest
  * Clase de prueba para la clase OsterBlender con JUnit
  * 
- * Proposito : Verificar el funcionamiento de los metodos de la clase OsterBlender
+ * 
  */
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -53,7 +53,8 @@ class OsterBlenderTest {
     }
 
     /**
-     * 
+     * prueba el metodo Fill de objeto OsterBlender.
+     * verifica que se llene la licuadora luego de utilizar el metodo
      * 
      */
     @Test
@@ -63,6 +64,12 @@ class OsterBlenderTest {
         assertTrue(blender.getLleno(), "La licuadora debe estar llena despues de llamar al metodo Fill.");
     }
 
+
+    /**
+     * Prueba del metodo empty de objeto OsterBlender
+     * verifica que la licuadora se vacie despues de llamar al metodo
+     * 
+     */
     @Test
     void testEmpty() {
         OsterBlender blender = new OsterBlender(0, true);
@@ -70,6 +77,10 @@ class OsterBlenderTest {
         assertFalse(blender.getLleno(), "La licuadora debe estar vacia despues de llamar al metodo Empty.");
     }
 
+    /**
+     * Prueba del metodo getSpeed de objeto OsterBlender
+     * verifica que devuelva la velocidad en la que se encuentra la licuadora
+     */
     @Test
     void testGetSpeed() {
         OsterBlender blender = new OsterBlender(5, false);
@@ -77,6 +88,11 @@ class OsterBlenderTest {
         assertEquals(5, blender.GetSpeed(), "El metodo GetSpeed debe devolver la velocidad configurada en 5.");
     }
 
+      /**
+     * Prueba del metodo Is full de objeto OsterBlender
+     * veridica que devuelva true si la licuadora esta llena y false si esta vacia
+     * 
+     */
     @Test
     void testIsFull() {
         OsterBlender blender = new OsterBlender(0, false);
